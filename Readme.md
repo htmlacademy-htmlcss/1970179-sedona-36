@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Виктор Галайко](https://up.htmlacademy.ru/htmlcss/36/user/1970179).
-* Наставник: `Неизвестно`.
+* Наставник: [Ирина Малиновская](https://htmlacademy.ru/profile/irina-malinovskaya).
 
 ---
 
