@@ -111,28 +111,24 @@
             </ul>
           </fieldset>
 
-          <fieldset class="catalog-filter-group catalog-filter-group-fieldset">
-            <legend class="catalog-filter-title">Стоимость, ₽:</legend>
-            <ul class="catalog-filter-list catalog-filter-list-slider">
-              <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="control-input" type="text" name="price-group" value="0" placeholder="от">
-                </label>
-              </li>
-              <li class="catalog-filter-item">
-                <label class="control">
-                  <input class="control-input" type="text" name="price-group" value="9000" placeholder="до">
-                </label>
-              </li>
-            </ul>
+          <fieldset class="catalog-filter-group">
+            <legend class="catalog-filter-title price">Стоимость, ₽:</legend>
+            <div class="range-wrapper-fields">
+              <label class="range-wrapper-label">
+                <input class="range-wrapper-fields-left" type="text" name="price-group" value="0" placeholder="от">
+              </label>
+              <label class="range-wrapper-label">
+                <input class="range-wrapper-fields-right" type="text" name="price-group" value="9000" placeholder="до">
+              </label>
+            </div>
           </fieldset>
-          <div button-set>
+
+          <div class="button-set">
             <button class="button apply-button" type="submit">Применить</button>
             <button class="button reset-button" type="reset">Сбросить</button>
           </div>
         </form>
-        </section>
-      </div>
+      </section>
       <div class="found-sort">
         <p class="found">
           Найдено гостиниц:
