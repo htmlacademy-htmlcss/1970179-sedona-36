@@ -45,25 +45,25 @@
 
     <main class="main-inner">
       <div class="hotels-search">
-      <header class="inner-header">
-        <h1 class="inner-header-title">Гостиницы Седоны</h1>
-        <ul class="breadcrumbs">
-          <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link" href="index.html">
-              <span class="visually-hidden">Главная</span>
-            </a>
-          </li>
-          <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link">Гостиницы</a>
-          </li>
-        </ul>
-      </header>
+        <header class="inner-header">
+          <h1 class="inner-header-title">Гостиницы Седоны</h1>
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs-item">
+              <a class="breadcrumbs-link" href="index.html">
+                <span class="visually-hidden">Главная</span>
+              </a>
+            </li>
+            <li class="breadcrumbs-item">
+             <a class="breadcrumbs-link">Гостиницы</a>
+            </li>
+          </ul>
+        </header>
 
-      <section class="catalog-hotels">
-        <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
-        <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+        <section class="catalog-hotels">
+          <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
+          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
 
-          <fieldset class="catalog-filter-group">
+          <fieldset class="catalog-filter-group catalog-filter-group-infrastructure">
             <legend class="catalog-filter-title">Инфраструктура:</legend>
             <ul class="catalog-filter-list">
               <li class="catalog-filter-item">
@@ -87,7 +87,7 @@
             </ul>
           </fieldset>
 
-          <fieldset class="catalog-filter-group">
+          <fieldset class="catalog-filter-group catalog-filter-group-housetype">
             <legend class="catalog-filter-title">Тип Жилья:</legend>
             <ul class="catalog-filter-list">
               <li class="catalog-filter-item">
@@ -111,7 +111,7 @@
             </ul>
           </fieldset>
 
-          <fieldset class="catalog-filter-group">
+          <fieldset class="catalog-filter-group catalog-filter-group-price">
             <legend class="catalog-filter-title price">Стоимость, ₽:</legend>
             <div class="range-wrapper-fields">
               <label class="range-wrapper-label">
@@ -127,8 +127,9 @@
             <button class="button apply-button" type="submit">Применить</button>
             <button class="button reset-button" type="reset">Сбросить</button>
           </div>
-        </form>
-      </section>
+          </form>
+        </section>
+      </div>
       <div class="found-sort">
         <p class="found">
           Найдено гостиниц:
@@ -286,6 +287,5 @@
         <img class="html-academy-logo" src="images\logo_htmlacademy.svg" width="115" height="33" alt="Логотип-ссылка на сайт HTML Academy">
       </a>
     </footer>
-    </div>
   </body>
 </html>
