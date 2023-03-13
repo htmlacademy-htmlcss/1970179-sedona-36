@@ -2,7 +2,7 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: url(fonts\ptsans-400.woff2) format("woff2");
+  src: url('/fonts/ptsans-400.woff2') format("woff2");
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: url(fonts\ptsans-700.woff2) format("woff2");
+  src: url('/fonts/ptsans-700.woff2') format("woff2");
   font-display: swap;
 }
 
@@ -38,20 +38,21 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 0 70px;
   gap: 30px;
-  height: 64px;
+  height: auto;
 }
 
 .navigation {
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-margin: 0;
-padding: 0;
-gap: 30px;
-width: calc(100%-270px);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  gap: 46px;
+  width: calc(100% - 270px);
+  max-height: 64px;
 }
 .navigation-logo {
   width: 138px;
@@ -62,52 +63,63 @@ width: calc(100%-270px);
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: calc(100%-138px);
+  width: calc(100% - 138px);
   padding: 0;
   list-style-type: none;
   max-width: 600px;
   flex-wrap: wrap;
+  margin: 0;
 }
-
+.navigation-item {
+  display: flex;
+  height: 64px;
+  position: relative;
+  margin-right: 32px;
+}
 .navigation-link {
+  padding: 20px 0;
+  display: flex;
+  position: relative;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   color: #333333;
   text-align: center;
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding-left: 16px;
 }
+.navigation-item--current::after {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #756257;
+}
+/*
 .navigation-link-current {
   border-bottom: 2px solid #756257;
-}
+} */
 
 .user-menu {
-  width: 270px;
-  margin-left: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
   padding: 0;
-  gap: 20px;
 }
 .user-list {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
-  width: 88px;
-  justify-content: space-between;
+  gap: 25px;
   list-style-type: none;
+  margin: 6px 33px 0 0;
 }
 .user-link {
   text-decoration: none;
+  position: relative;
 }
 .user-button {
   font-weight: 700;
@@ -124,18 +136,37 @@ width: calc(100%-270px);
   padding-bottom: 8px;
 }
 
+.notification-badge {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 7px;
+  top: -12px;
+  font-weight: 400;
+  font-size: 10px;
+  background: #7DB54F;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+}
 
-.hero {
+
+.welcome {
   min-height: 485px;
   background-image: url("../images/hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  position: relative;
 }
 .welcome-logo {
-padding-top: 50px;
+  padding-top: 50px;
 }
-
+.welcome-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 .sedona {
   max-width: 620px;
@@ -146,17 +177,15 @@ padding-top: 50px;
   margin: 0 auto;
 }
 .advantages-text {
-width: 230px;
-min-height: 160px;
-padding: 90px 85px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  width: 230px;
+  min-height: 160px;
+  padding: 102px 85px;
+  display: flex;
+  flex-direction: column;
 }
 .advantages-list {
   padding: 0;
-  margin: 0;
+  margin: 20px 0 0;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
@@ -174,7 +203,7 @@ align-items: center;
   line-height: 36px;
   text-align: center;
   text-transform: uppercase;
-  padding-top: 65px;
+  padding-top: 69px;
   margin: 0 auto;
 }
 .sedona-causes,
@@ -187,15 +216,19 @@ align-items: center;
   max-width: 700px;
   text-align: center;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 25px;
   padding-bottom: 70px;
+}
 
+.search-description {
+  padding-top: 21px;
+  padding-bottom: 53px;
 }
 
 .advantages-item,
 .infrastructure-item {
   background-color: rgba(131, 179, 211, 0.12);
-
+  min-height: 385px;
 }
 .advantages-item-city,
 .advantages-item-bridge {
@@ -206,27 +239,56 @@ align-items: center;
   flex-direction: row;
   width: 100%;
 }
+
 .advantages-item-road {
   background-color: rgba(131, 179, 211, 0.2);
 }
 .infrastructure-item-food {
   background-color:#FFFFFF;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.advantages-title,
-.infrastructure-title {
+.advantages-title {
+  margin: 0 0 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+}
+
+.infrastructure-title {
+  margin: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.advantages-title::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 60px;
+  bottom: -32px;
+  left: calc(50% - 30px);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.3);
+}
+.advantages-title--small {
+  margin-top: 11px;
+}
+.advantages-title--small::after {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .advantages-description,
 .infrastructure-description {
   text-align: center;
   max-width: 240px;
+  margin: 0;
 }
 
 
@@ -253,16 +315,19 @@ padding: 0;
 .visit-title {
   max-width: 505px;
   margin: 0 auto;
+  padding-top: 64px;
 }
 .visit-causes {
   max-width: 490px;
   margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 64px;
 }
 
 .interested-search {
   width: 592px;
   margin: 0 auto;
-  padding: 96px 304px;
+  padding: 27px 304px;
 }
 
 .button-search {
@@ -278,10 +343,11 @@ padding: 0;
   text-transform: uppercase;
   display: block;
   margin: 0 auto;
-  max-width: 340px;
+  max-width: 276px;
 }
 
 .index-subscription {
+  margin-top: 69px;
   background-image: url("../images/subscribe.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -289,36 +355,38 @@ padding: 0;
   height: 415px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
-
 }
 .container-subscription {
-  padding: 96px 258px 104px;
-  max-width: 684px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
+  /*padding: 50px 258px 104px;*/
+  /*max-width: 684px;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*margin: 0;*/
 }
 .index-subscription-title,
 .catalog-subscription-title {
   max-width: 404px;
-  margin: 0 auto;
+  margin: 96px auto 0;
+  padding: 0;
 }
 .index-subscription-description,
 .catalog-subscription-description {
   max-width: 475px;
-  margin: 0 auto;
+  margin: 20px auto 0;
+  padding: 0;
 }
+
 .subscription-form {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 53px;
 }
-.field{
+.field {
   font-size: 18px;
   line-height: 24px;
   width: 452px;
@@ -328,7 +396,7 @@ padding: 0;
 }
 .subscription-button {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 36px;
   color: #FFFFFF;
   text-align: center;
@@ -343,8 +411,7 @@ padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 120px;
-  padding: 40px 70px 30px;
+  padding: 47px 70px 30px;
 }
 .footer-social-list {
   width: 142px;
@@ -358,6 +425,9 @@ padding: 0;
   list-style-type: none;
 }
 .footer-social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 47px;
   height: 40px;
 }
@@ -390,7 +460,7 @@ padding: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 35px 70px 70px;
+  padding: 35px 70px 80px;
   min-height: 307px;
   box-sizing: border-box;
 
@@ -415,10 +485,9 @@ padding: 0;
   line-height: 21px;
   display: flex;
   justify-content: flex-start;
-  margin: 0;
+  margin: 7px 0 0;
   padding: 0;
-  gap: 10px;
-  max-width: 114px;
+  gap: 18px;
   list-style-type: none;
 }
 .breadcrumbs-item {
@@ -450,6 +519,29 @@ padding-right: 70px;
   padding: 0;
   padding-bottom: 32px;
 }
+.control {
+  padding-left: 30px;
+  position: relative;
+}
+
+.control-input+.checkbox-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 23px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  tab-index: 0;
+}
+.control-input:focus+.checkbox-indicator {
+  border: 3px solid #83B3D3;
+}
+
+.control-input:checked+.checkbox-indicator {
+  background: white url("/images/checked.svg") no-repeat center;
+}
 
 .control-input {
   line-height: 23px;
@@ -475,6 +567,9 @@ padding-right: 70px;
 }
 .range-wrapper-fields {
   position: relative;
+}
+::-webkit-input-placeholder {
+  padding-left: 18px;
 }
 .range-wrapper-fields-left {
   padding: 0;
@@ -506,7 +601,6 @@ padding-right: 70px;
   flex-direction: column;
   margin: 0;
   padding: 0;
-  padding-top: 56px;
 }
 .apply-button  {
   display: inline-block;
