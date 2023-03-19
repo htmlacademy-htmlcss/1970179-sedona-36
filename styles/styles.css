@@ -406,7 +406,7 @@ body {
   margin-top: 69px;
   padding-top: 96px;
   background-color: #6282ab;
-  background-image: url("../images/subscribe.jpg");
+  background-image: url("../images/subscribtion.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: #FFFFFF;
@@ -524,11 +524,11 @@ body {
   color: #756157;
 }
 .footer-phonenumber:focus {
-  outline: none;
+  outline-color: #756157;
   color: #756157;
 }
 .footer-phonenumber:focus-visible {
-  outline: none;
+  outline-color: #756157;
   color: #756157;
 }
 .footer-phonenumber:active {
@@ -1072,7 +1072,6 @@ body {
   fill: rgba(117, 97, 87, 0.3);
 }
 .footer-logo:focus {
-  outline: 0;
   opacity: .3;
 }
 .footer-logo:focus path {
@@ -1376,4 +1375,8 @@ body {
 }
 .modal-container-close {
   display: none;
+}
+
+.button-social:focus {
+  outline: 3px solid #68A2CA;
 }
